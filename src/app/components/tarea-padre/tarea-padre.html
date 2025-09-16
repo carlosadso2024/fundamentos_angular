@@ -1,0 +1,25 @@
+<div>
+  <h2>Sistema de Tareas</h2>
+  
+  <div>
+    <label>Nueva tarea:</label>
+    <input 
+      type="text" 
+      [(ngModel)]="tareaInput" 
+      placeholder="Escribe tu tarea aquí"/>
+    <button (click)="enviarTarea()">Enviar Tarea</button>
+  </div>
+
+  <p *ngIf="!tareaCompletada">
+    <strong>Tarea pendiente:</strong> {{ tareaInput || tareaEnviada }}
+  </p>
+  <p *ngIf="tareaCompletada">
+    <strong>Tarea completada:</strong> {{ tareaEnviada }}
+  </p>
+
+  <app-tarea-hijo 
+    *ngIf="mostrarTarea"
+    [tarea]="tareaEnviada"
+    (tareaCompletada)="onTareaCompletada()">
+  </app-tarea-hijo>
+</div>
