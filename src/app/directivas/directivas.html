@@ -1,0 +1,24 @@
+<div class="catalogo">
+    <div *ngFor="let producto of productos" class="contenedor">
+        <div class="contenedor-titulo">
+            <h2 class="titulo">{{ producto.nombre }}</h2>
+        </div>
+        <div class="contenedor-descripcion">
+            <h3 class="descripcion">Descripción</h3>
+            <p>{{ producto.descripcion }}</p>
+        </div>
+        <div class="contenedor-precio">
+            <span><strong>Stock: </strong>{{ producto.stock }} unidades</span>
+            <span><strong>Precio: </strong>{{ producto.precio }}</span>
+        </div>
+    </div>
+</div>
+ <div class="contenedor-form">
+        <button (click)="agregarProducto()">Agregar Producto</button>
+        <form class="formulario" action="">
+            <span>Nombre </span><input type="text" [(ngModel)] = "nombreInput">
+            <span>Descripción </span><input type="text" [(ngModel)] ="descripcionInput" >
+            <span>Stock </span><input type="number" [(ngModel)] = "stockInput">
+            <span>Precio </span><input type="number" [(ngModel)] = "precioInput">
+        </form>
+    </div>

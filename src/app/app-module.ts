@@ -5,12 +5,14 @@ import { App } from './app';
 import { TareaPadre } from './components/tarea-padre/tarea-padre';
 import { TareaHijo } from './components/tarea-hijo/tarea-hijo';
 import { FormsModule } from '@angular/forms';
+import { Directivas } from './directivas/directivas';
 
 @NgModule({
   declarations: [
     App,
     TareaPadre,
-    TareaHijo
+    TareaHijo,
+    Directivas
   ],
   imports: [
     BrowserModule,
